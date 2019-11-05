@@ -3,7 +3,7 @@ install: true
 
 env:
   global:
-    - HOME="testingintegrationCI"
+    - HOME="OnlineShopSimulator"
 
 matrix:
   include:
