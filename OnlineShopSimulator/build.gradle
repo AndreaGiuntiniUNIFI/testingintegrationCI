@@ -15,12 +15,6 @@ plugins {
 	id 'com.gradle.build-scan' version '2.1'	
 }
 
-sonarqube {
-  	properties {
-    	property "sonar.projectKey", "APTUnifi_OnlineShopSimulator"
-  }
-}
-
 jacocoTestReport {
     reports {
         xml.enabled = true // coveralls plugin depends on xml format report
@@ -28,10 +22,6 @@ jacocoTestReport {
     }
 }
 
-//This task is essential for making travis.ci working
-coveralls {
-    sourceDirs += ['src/main/kotlin']
-}
 
 //This task is essential for skipping the terms of service terminal procedure
 buildScan {
@@ -60,6 +50,6 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.23.4'
     
     // https://mvnrepository.com/artifact/org.assertj/assertj-swing-junit
-	testCompile group: 'org.assertj', name: 'assertj-swing-junit', version: '3.9.2'
+    testCompile group: 'org.assertj', name: 'assertj-swing-junit', version: '3.9.2'
 
 }
