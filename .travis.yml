@@ -35,4 +35,3 @@ script:
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
-
