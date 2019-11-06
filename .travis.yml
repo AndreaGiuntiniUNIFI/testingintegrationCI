@@ -9,8 +9,6 @@ matrix:
   include:
     - jdk: openjdk8
     - jdk: openjdk9
-    - os: osx
-      osx_image: xcode10.1
 
 notifications:
   email:
@@ -18,7 +16,7 @@ notifications:
       - andrea.giuntini@stud.unifi.it
     on_success: never # default: change
     on_failure: always # default: always
-    
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -35,3 +33,4 @@ script:
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
+
